@@ -1,0 +1,20 @@
+978-0134685991,Java How to Program,Deitel,true
+978-0596009205,Head First Java,Kathy Sierra,false
+978-0132350884,Clean Code,Robert C. Martin,true
+978-0131103627,The C Programming Language,Brian W. Kernighan,true
+978-0203633854,Design Patterns,Erich Gamma,false
+978-0135957059,The Pragmatic Programmer,David Thomas,true
+978-0321125217,Domain-Driven Design,Eric Evans,true
+978-0137081073,The Clean Coder,Robert C. Martin,false
+978-0265338412,Introduction to Algorithms,Thomas H. Cormen,true
+978-0134494166,Effective Java,Joshua Bloch,true
+978-1491957660,Designing Data-Intensive Applications,Martin Kleppmann,false
+978-0321356680,Effective C++,Scott Meyers,true
+978-0596517748,JavaScript: The Good Parts,Douglas Crockford,false
+978-1449331818,Learning Python,Mark Lutz,true
+978-1617294945,Spring in Action,Craig Walls,true
+978-1593276034,Eloquent JavaScript,Marijn Haverbeke,false
+978-0321146533,Refactoring,Martin Fowler,true
+978-1118008188,Data Structures and Algorithms in Java,Michael T. Goodrich,false
+978-0136083238,Artificial Intelligence: A Modern Approach,Stuart Russell,true
+978-0321573513,C++ Primer,Stanley B. Lippman,true
