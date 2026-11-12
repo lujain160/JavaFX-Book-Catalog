@@ -1,0 +1,240 @@
+
+    
+  
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-fredoka), ui-rounded, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --background: oklch(0.96 0.018 75);
+  --foreground: oklch(0.29 0.03 40);
+  --card: oklch(0.985 0.01 80);
+  --card-foreground: oklch(0.29 0.03 40);
+  --popover: oklch(0.985 0.01 80);
+  --popover-foreground: oklch(0.29 0.03 40);
+  --primary: oklch(0.64 0.14 45);
+  --primary-foreground: oklch(0.99 0.01 80);
+  --secondary: oklch(0.9 0.035 140);
+  --secondary-foreground: oklch(0.3 0.04 150);
+  --muted: oklch(0.93 0.02 75);
+  --muted-foreground: oklch(0.5 0.03 50);
+  --accent: oklch(0.9 0.035 140);
+  --accent-foreground: oklch(0.3 0.04 150);
+  --destructive: oklch(0.577 0.2 27);
+  --border: oklch(0.88 0.025 70);
+  --input: oklch(0.88 0.025 70);
+  --ring: oklch(0.64 0.14 45);
+  --chart-1: oklch(0.64 0.14 45);
+  --chart-2: oklch(0.68 0.06 145);
+  --chart-3: oklch(0.5 0.03 50);
+  --chart-4: oklch(0.8 0.1 80);
+  --chart-5: oklch(0.29 0.03 40);
+  --radius: 0.875rem;
+  --sidebar: oklch(0.985 0.01 80);
+  --sidebar-foreground: oklch(0.29 0.03 40);
+  --sidebar-primary: oklch(0.64 0.14 45);
+  --sidebar-primary-foreground: oklch(0.99 0.01 80);
+  --sidebar-accent: oklch(0.93 0.02 75);
+  --sidebar-accent-foreground: oklch(0.29 0.03 40);
+  --sidebar-border: oklch(0.88 0.025 70);
+  --sidebar-ring: oklch(0.64 0.14 45);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* ---------- Cozy room scene animations ---------- */
+
+.pm-part {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.pm-paused,
+.pm-paused * {
+  animation-play-state: paused !important;
+}
+
+@keyframes pm-cat-chase {
+  0% { transform: translate(560px, 330px); }
+  8% { transform: translate(590px, 250px); }
+  18% { transform: translate(450px, 548px); }
+  36% { transform: translate(110px, 560px); }
+  42% { transform: translate(120px, 592px); }
+  70% { transform: translate(760px, 596px); }
+  82% { transform: translate(900px, 470px); }
+  88% { transform: translate(880px, 480px); }
+  100% { transform: translate(300px, 540px); }
+}
+.pm-cat-chase { animation: pm-cat-chase 7s ease-in-out forwards; }
+
+@keyframes pm-mouse-flee {
+  0% { transform: translate(350px, 565px) scaleX(1); opacity: 1; }
+  22% { transform: translate(70px, 550px) scaleX(1); }
+  26% { transform: translate(50px, 580px) scaleX(-1); }
+  60% { transform: translate(820px, 592px) scaleX(-1); }
+  80% { transform: translate(960px, 440px) scaleX(-1); opacity: 1; }
+  82%, 100% { transform: translate(960px, 440px) scaleX(-1); opacity: 0; }
+}
+.pm-mouse-flee { animation: pm-mouse-flee 7s ease-in-out forwards; }
+
+@keyframes pm-mouse-creep {
+  0% { transform: translate(960px, 440px); opacity: 0; }
+  4% { transform: translate(950px, 445px); opacity: 1; }
+  14%, 24% { transform: translate(880px, 470px); opacity: 1; }
+  36%, 46% { transform: translate(740px, 505px); opacity: 1; }
+  60%, 70% { transform: translate(560px, 540px); opacity: 1; }
+  88% { transform: translate(370px, 566px); opacity: 1; }
+  100% { transform: translate(350px, 565px); opacity: 1; }
+}
+.pm-mouse-creep { animation: pm-mouse-creep 40s ease-in-out forwards; }
+
+@keyframes pm-type { to { transform: translateY(-6px); } }
+.pm-cat-type { animation: pm-type 0.22s ease-in-out infinite alternate; }
+
+@keyframes pm-tail {
+  from { transform: rotate(-7deg); }
+  to { transform: rotate(8deg); }
+}
+.pm-cat-tail {
+  transform-box: fill-box;
+  transform-origin: 0% 100%;
+  animation: pm-tail 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes pm-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+.pm-cat-blink { animation: pm-blink 4.2s ease-in-out infinite; }
+
+@keyframes pm-bounce { to { transform: translateY(-14px); } }
+.pm-cat-bounce { animation: pm-bounce 0.26s ease-out infinite alternate; }
+
+@keyframes pm-eat {
+  to { transform: translateY(14px) rotate(4deg); }
+}
+.pm-cat-eat { animation: pm-eat 0.55s ease-in-out infinite alternate; }
+
+@keyframes pm-breathe { to { transform: scale(1.03, 0.97); } }
+.pm-cat-breathe {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: pm-breathe 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes pm-zzz {
+  0% { transform: translate(0, 0); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translate(18px, -40px); opacity: 0; }
+}
+.pm-zzz { animation: pm-zzz 2.4s ease-out infinite; }
+
+@keyframes pm-pop {
+  0% { transform: scale(0.4); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.pm-pop { animation: pm-pop 0.4s ease-out both; }
+
+@keyframes pm-code-float {
+  0% { transform: translateY(10px); opacity: 0; }
+  15% { opacity: 1; }
+  75% { opacity: 0.85; }
+  100% { transform: translateY(-135px); opacity: 0; }
+}
+.pm-code-float { animation: pm-code-float 5s ease-out forwards; }
+
+@keyframes pm-cursor { 50% { opacity: 0; } }
+.pm-cursor { animation: pm-cursor 1s steps(1) infinite; }
+
+@keyframes pm-scurry { to { transform: translateY(-2px); } }
+.pm-scurry { animation: pm-scurry 0.12s linear infinite alternate; }
+
+@keyframes pm-sniff { to { transform: translateX(-1.5px) rotate(-4deg); } }
+.pm-sniff { animation: pm-sniff 0.35s ease-in-out infinite alternate; }
+
+@keyframes pm-rain { to { transform: translate(-12px, 190px); } }
+.pm-rain { animation: pm-rain 0.6s linear infinite; }
+
+@keyframes pm-drop { to { transform: translateY(40px); opacity: 0; } }
+.pm-drop { animation: pm-drop 6s ease-in infinite; }
+
+@keyframes pm-drift {
+  from { transform: translateX(-60px); }
+  to { transform: translateX(300px); }
+}
+.pm-drift { animation: pm-drift 40s linear infinite; }
+
+@keyframes pm-glow-pulse { to { opacity: 0.25; transform: scale(1.12); } }
+.pm-glow-pulse { animation: pm-glow-pulse 3s ease-in-out infinite alternate; }
+
+@keyframes pm-twinkle { to { opacity: 0.45; } }
+.pm-twinkle { animation: pm-twinkle 1.6s ease-in-out infinite alternate; }
+
+@keyframes pm-steam {
+  0% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 0.7; }
+  100% { transform: translateY(-18px); opacity: 0; }
+}
+.pm-steam { animation: pm-steam 2.8s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pm-scene *,
+  .pm-scene {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
